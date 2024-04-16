@@ -1,0 +1,335 @@
+<html>
+
+<head>
+  <title>rocky mountains</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:wght@300&display=swap" rel="stylesheet">
+  <style>
+    * {
+      font-family: "Roboto Mono", monospace;
+      font-optical-sizing: auto;
+      font-weight: <weight>;
+      font-style: normal;
+      background-color: #ebdaf5;
+    }
+
+    .rock {
+      /* min-width: 200px; */
+      max-width: 200px;
+      max-height: 150px;
+    }
+
+    .rock:hover {
+      transform: rotate(180deg);
+    }
+
+    body {
+      max-width: 980px;
+      margin: 10px auto;
+    }
+
+    .visible {
+      display: block;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .images {
+      width: 70%;
+    }
+
+    .text {
+      width: 30%;
+      position:fixed;
+      right: 5%;
+      top: 15%;
+      max-height: 70%;
+      overflow: scroll;
+    }
+    .explore-content {
+      display: flex;
+    }
+
+  </style>
+</head>
+
+<body>
+
+<h1>Rocky Mountains Over the Ages</h1>
+<button onclick="showAbout()">about</button>
+<button onclick="showExplore()">explore</button>
+
+<div class="hidden" id="about">
+  <h1>about</h1>
+
+  <p>blah blah blah about rocky mountains show topology map??? idk</p>
+</div>
+
+<div id="explore">
+  <h1>explore</h1>
+  <p>hover over the images to learn more about them</p>
+
+  <label for="cars">era:</label>
+  <select onchange="changeEra(event)" name="cars" id="cars">
+    <option value="precambrian">precambrian</option>
+    <option value="paleozoic">paleozoic</option>
+    <option value="mesozoic">mesozoic</option>
+    <option value="cenozoic">cenozoic</option>
+  </select>
+
+  <div class="explore-content">
+    <div class="images">
+      <div id="precambrian" class="precambrian">
+        <h2>precambrian era</h2>
+        <img class="rock" id="precambrian-gneiss" alt="source: https://en.wikipedia.org/wiki/Gneiss" src="./rocks/gneiss.png"/>
+        <img class="rock" id="precambrian-schist" alt="source: https://geologyscience.com/rocks/metamorphic-rocks/schist/" src="./rocks/schist.png"/>
+        <img class="rock" id="precambrian-siltstone" alt="source: https://www.dreamstime.com/stock-photo-natural-sample-siltstone-rock-quartz-veins-cracks-white-background-specimen-filled-clastic-sedimentary-composed-silt-image88600996" src="./rocks/siltstone.png"/>
+
+        <h3>Boulder Creek Batholith</h3>
+        <img width="80%" id="precambrian-batholith" alt="source: https://www.periclespress.net/geology_Boulder.html" src="./rocks/boulder creek batholith.jpeg"/>
+      </div>
+      <div id="paleozoic" class="hidden paleozoic">
+        <h2>paleozoic era</h2>
+        <img class="rock" id="paleozoic-limestone" alt="source: https://www.amazon.com/Gray-Limestone-Sedimentary-Rock-Specimen/dp/B083F5HQQ3" src="./rocks/limestone.png"/>
+        <img class="rock" id="paleozoic-sandstone" alt="source: https://www.amazon.com/White-Sandstone-Sedimentary-Rock-Specimen/dp/B083F4TC39" src="./rocks/sandstone.png"/>
+        <img width="80%" id="paleozoic-shallow-seas" alt="source: eeps slides" src="./rocks/shallow seas.png"/>
+        <h3>ancestral rocky mountains</h3>
+        <img width="80%" id="paleozoic-ancestral-rocky" alt="source: pbs" src="./rocks/ancestral rocky.jpeg"/>
+      </div>
+      <div id="mesozoic" class="hidden mesozoic">
+        <h2>mesozoic era</h2>
+        <img class="rock" id="mesozoic-sandstone" alt = "source: https://www.amazon.com/White-Sandstone-Sedimentary-Rock-Specimen/dp/B083F4TC39" src="./rocks/sandstone.png"/>
+        <img class="rock" id="mesozoic-shale" alt="source: " src="./rocks/shale.png"/>
+        <img class="rock" id="mesozoic-conglomerate" alt="source: " src = "./rocks/conglomerate.png"/>
+        <img class="rock" id="mesozoic-coal" alt="source: " src="./rocks/coal.png"/>
+        <h3>western interior seaway</h3>
+        <img width="80%" id="mesozoic-seaway" alt="source: https://en.wikipedia.org/wiki/Western_Interior_Seaway " src="./rocks/western-interior-seaway.png"/>
+      </div>
+
+      <div id="cenozoic" class="hidden cenozoic">
+        <h2>cenozoic era</h2>
+        <img class="rock" id="cenozoic-sedimentary" alt="source" src="./rocks/sandstone.png"/>
+        <img class="rock" id="cenozoic-igenous" alt="source" src="./rocks/basalt.png"/>
+        <img id="cenozoic-volcanic-activity" alt="source" src="./rocks/volcano.png"/>
+        <img id="cenozoic-pleistocene-epoch" alt="source" src="./rocks/epoch.png"/>
+        <img id="cenozoic-valleys" alt="source" src="./rocks/valleys.png"/>
+      </div>
+
+    <div class="text">
+      <div class="precambrian">
+        <div id="precambrian1">
+          <div class="hidden" id="text-precambrian-gneiss">
+          <h3>gneiss</h3>
+          <p>rock category: metamorphic</p>
+          <p>texture: foliated, coarse grain size</p>
+          <p>composition: quartz and feldspar (lighter), biotite, amphibole, garnet (darker)</p>
+          <p>characteristics: gneissic banding (light and dark bands of minerals)
+          <p>where it's found: Mummy Range</p>
+        </div>
+
+        <div class='hidden' id="text-precambrian-schist">
+          <h3>schist</h3>
+          <p>rock category: metamorphic</p>
+          <p>texture: strong foliation, easy splitting, fine-medium textured grain size</p>
+          <p>composition: micas, quartz, feldspare, chlorite, graphite</p>
+          <p>where it's found: exposed cores of mountain ranges (due to uplifting of metamorphic rocks), Elk Mountains, Front Range, Bighorn Mountains</p>
+        </div>
+
+        <div class='hidden' id="text-precambrian-siltstone">
+          <h3>siltstone</h3>
+          <p>rock category: metamorphosed sedimentary</p>
+          <p>grain sized: finer grained, smaller than sand in sandstone</p>
+          <p>composition: mica-rich</p>
+          <p>appearance: shiny, reddish</p>
+          <p>texture: foliated</p>
+          <p>where it's found: King's Peak (highest part of the Utah Uinta Mountains)</p>
+        </div>
+
+        <div class="hidden" id="text-precambrian-batholith">
+          <h3>igneous intrusions</h3>
+          <p>plutonic igneous rocks</p>
+          <p>batholiths are more resistant to erosion than the surrounding rocks are, and form many high mountain peaks including Pike’s Peak, Mount Evans, and Long’s Peak in the Colorado Front Range</p>
+          <p>aka "granited domes"</p>
+        </div>
+      </div>
+      </div>
+
+      <div class="paleozoic">
+        <div class="hidden" id="text-paleozoic-sandstone">
+          <h3>sandstone</h3>
+          <p>category: sedimentary</p>
+          <p>composition: calcium carbonate, formed from shells and skeletons of marine organisms</p>
+          <p>color: grey, white, black</p>
+        </div>
+
+        <div class="hidden" id="text-paleozoic-limestone">
+          <h3>limestone</h3>
+          <p>category: limestone</p>
+          <p>composition: sand grains cemented together over time</p>
+          <p>color: red, brown, white</p>
+        </div>
+
+        <div class="hidden" id="text-paleozoic-shallow-seas">
+          <h3>a period of rising seas and erosion</h3>
+          <p>during the paleozoic era, the rocky mountains didn't exist. instead, the area was dominated by a shallow sea</p>
+          <p>shallow seas left behind thick layers of sediments
+          <p>mountain-building event, creating the ancient original rockys!
+        </div>
+      </div>
+
+      <div class="mesozoic">
+        <div class="hidden" id="text-mesozoic-sandstone">
+          <h3>sandstone</h3>
+          <p>category: sedimentary</p>
+          <p>composition: calcium carbonate, formed from shells and skeletons of marine organisms</p>
+          <p>color: grey, white, black</p>
+        </div>
+        <div class="hidden" id="text-mesozoic-shale">
+          <h3>shale</h3>
+          <p>category: sedimentary</p>
+          <p>composition: fine-grained, clay and silt particles</p>
+          <p>where it's found: shallow seas, lakes and floodplains</p>
+        </div>
+        <div class="hidden" id="text-mesozoic-conglomerate">
+          <h3>conglomerate</h3>
+          <p>category: sedimentary</p>
+          <p>composition: coarse-grained, conglomeration of rounded clasts (pebbles to boulders)</p>
+          <p>how it's formed: erosion and uplift from ancestral rockys</p>
+          <p>evidence: Morrison Foundation</p>
+        </div>
+        <div class="hidden" id="text-mesozoic-coal">
+          <h3>coal</h3>
+          <p>category: sedimentary</p>
+          <p>composition: organic material/plant debris </p>
+          <p>how it's formed: in swampy environments, burial and compaction, coalification</p>
+        </div>
+        <div class="hidden" id="text-mesozoic-seaway">
+          <h3>Western Interior Seaway</h3>
+          <p>* stretched from the Arctic Ocean in the north all the way down to the Gulf of Mexico in the south, splitting the North American continent into two landmasses – Laramidia to the west (where the Rocky Mountains are today) and Appalachia to the east</p>
+          <p>* played a big role in marine sedimentation and fossil records!</p>
+          <p>* eventually uplifted and eroded</p>
+        </div>
+        </div>
+      </div>
+
+      <div class="cenozoic">
+        <div class="hidden" id="text-cenozoic">
+          * uplift
+          * faulting - rise of modern Rocky Mountains (>5k feet)
+          * volcanic activity
+          * glaciation - Pleistocene Epoch
+          * U-shaped valleys
+        </div>
+      </div>
+  </div>
+</div>
+
+</body>
+
+<script>
+
+// Get a reference to the element that you want to work with
+var precambriangneiss = document.querySelector("#precambrian-gneiss");
+var precambrianschist = document.querySelector("#precambrian-schist");
+var precambriansiltstone = document.querySelector("#precambrian-siltstone");
+var precambrianbatholith = document.querySelector('#precambrian-batholith');
+
+var paleozoicsandstone = document.querySelector("#paleozoic-sandstone");
+var paleozoiclimestone = document.querySelector("#paleozoic-limestone");
+var paleozoicshallowseas = document.querySelector("#paleozoic-shallow-seas");
+
+var mesozoicsandstone = document.querySelector("#mesozoic-sandstone");
+var mesozoicshale = document.querySelector("#mesozoic-shale");
+var mesozoicconglomerate = document.querySelector("#mesozoic-conglomerate");
+var mesozoiccoal = document.querySelector("#mesozoic-coal");
+var mesozoicseaway = document.querySelector("#mesozoic-seaway");
+
+// Set up an event handler. Notice that we don't use "on" in front
+// of the event name when doing it this way.
+precambriangneiss.addEventListener("mouseover", changeDef);
+precambrianschist.addEventListener("mouseover", changeDef);
+precambriansiltstone.addEventListener("mouseover", changeDef);
+precambrianbatholith.addEventListener("mouseover", changeDef);
+
+precambriangneiss.addEventListener("mouseout", changeDef2);
+precambrianschist.addEventListener("mouseout", changeDef2);
+precambriansiltstone.addEventListener("mouseout", changeDef2);
+precambrianbatholith.addEventListener("mouseout", changeDef2);
+
+paleozoicsandstone.addEventListener("mouseover", changeDef);
+paleozoiclimestone.addEventListener("mouseover", changeDef);
+paleozoicshallowseas.addEventListener("mouseover", changeDef);
+
+paleozoicsandstone.addEventListener("mouseout", changeDef2);
+paleozoiclimestone.addEventListener("mouseout", changeDef2);
+paleozoicshallowseas.addEventListener("mouseout", changeDef2);
+
+mesozoicsandstone.addEventListener("mouseover", changeDef);
+mesozoicshale.addEventListener("mouseover", changeDef);
+mesozoicconglomerate.addEventListener("mouseover", changeDef);
+mesozoiccoal.addEventListener("mouseover", changeDef);
+mesozoicseaway.addEventListener("mouseover", changeDef);
+
+mesozoicsandstone.addEventListener("mouseout", changeDef2);
+mesozoicshale.addEventListener("mouseout", changeDef2);
+mesozoicconglomerate.addEventListener("mouseout", changeDef2);
+mesozoiccoal.addEventListener("mouseout", changeDef2);
+mesozoicseaway.addEventListener("mouseout", changeDef2);
+
+function changeEra(event) {
+  console.log("hi", event.target.value);
+  let selected = document.getElementById(event.target.value);
+
+  if(selected != "precambrian") {
+    document.getElementById("precambrian").classList.remove('visible');
+    document.getElementById("precambrian").classList.add('hidden');
+  }
+  if(selected != 'paleozoic') {
+    document.getElementById("paleozoic").classList.remove('visible');
+    document.getElementById("paleozoic").classList.add('hidden');
+  }
+  if(selected != 'mesozoic') {
+    document.getElementById("mesozoic").classList.remove('visible');
+    document.getElementById("mesozoic").classList.add('hidden');
+  }
+  if(selected != 'cenozoic') {
+    document.getElementById("cenozoic").classList.remove('visible');
+    document.getElementById("cenozoic").classList.add('hidden');
+  }
+  selected.classList.remove('hidden');
+  selected.classList.add('visible');
+
+
+}
+function changeDef(event){
+  console.log(event.target.id);
+  let id = event.target.id;
+  document.getElementById("text-" + id).classList.add('visible');
+  document.getElementById("text-" + id).classList.remove('hidden');
+}
+
+function changeDef2(event){
+  console.log(event.target.id);
+  let id = event.target.id;
+  document.getElementById("text-" + id).classList.add('hidden');
+  document.getElementById("text-" + id).classList.remove('visible');
+}
+
+function showAbout() {
+  document.getElementById('about').classList.toggle('hidden');
+  document.getElementById('about').classList.toggle('visible');
+  document.getElementById('explore').classList.toggle('hidden');
+  document.getElementById('explore').classList.toggle('visible');
+}
+
+function showExplore() {
+  document.getElementById('about').classList.toggle('hidden');
+  document.getElementById('about').classList.toggle('visible');
+  document.getElementById('explore').classList.toggle('hidden');
+  document.getElementById('explore').classList.toggle('visible');
+}
+</script>
+</html>
